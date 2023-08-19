@@ -63,3 +63,67 @@ Ne işe yarar: Base Model Servis Örneği
     }
 
 ```
+
+### Code sample: Extension Context Extension
+
+What does it do : Navigator Extension
+Ne işe yarar: Navigator Eklentisi
+
+```dart
+    // Navigator on BuildContext .Dot Function
+    ElevatedButton(
+        // context. pushReplacement - push - pop and many function
+        onPressed: () => context.push(HomeWidget()),
+        child: Text('Goto Home Widget');
+    );
+```
+
+#### -----------------------------------------------------------
+
+What does it do : Screen Size Extension
+Ne işe yarar: Screen Size Eklentisi
+
+```dart
+    // Screen Size Height or Width on BuildContext .Dot Function
+    Text(
+        'Selam Naber'
+        style: TextStyle(
+            // context.screenWidth or context.screenHeight
+            fontSize: context.screenHeight / 2
+        ),
+    );
+```
+
+#### ------------------------------------------------------------
+
+What does it do : Theme Data Extension
+Ne işe yarar: Theme Data Eklentisi
+
+```dart
+
+    Text(
+        'Text Yazısıdır. Context içerisinden textStyle getirebilirsin'
+        style: context.textTheme.titleLarge
+    );
+```
+
+#### -------------------------------------------------------------
+
+What does it do : Numeric Extension
+Ne işe yarar: Numeric Eklentisi
+
+```dart
+
+    Column(
+        children[
+            Container(),
+            //
+            AnyWidget(),
+            // Any Number . widthBox or highBox use Space Widget
+            24.widthBox
+            //
+            AnyWidget(),
+        ]
+    );
+
+```
