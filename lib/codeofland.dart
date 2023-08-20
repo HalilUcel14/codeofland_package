@@ -32,3 +32,12 @@ export 'sources/extension/text_style/font_weight_extension.dart';
 
 ///
 export 'sources/extension/widget/widget_extension.dart';
+export 'sources/firebase/authentication/firebase_auth_manager.dart';
+
+///------------------------------------------------------------
+/// ---------------------- [FİREBASE]--------------------------
+///------------------------------------------------------------
+
+// -----------------------[AUTH]---------------------------
+export 'sources/firebase/authentication/firebase_auth_service.dart';
+  // write Usage Kode Sample
