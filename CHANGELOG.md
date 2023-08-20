@@ -1,4 +1,9 @@
-# 0.0.2 - 19.08.2023
+# 0.0.3 - 20.08.2023
+
+* TODO: Add FirebaseAuthManager
+* TODO: Add FirebaseAuthService
+
+## 0.0.2 - 19.08.2023
 
 * TODO: add Context Extension
 * TODO: add Widget Extension

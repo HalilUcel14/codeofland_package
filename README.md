@@ -127,3 +127,24 @@ Ne işe yarar: Numeric Eklentisi
     );
 
 ```
+
+#### --------------------------------------------------------------
+
+What does it do : Firebase Auth Manager
+Ne işe yarar: Firebase Auth Manager
+
+```dart
+
+    Column(
+        children[
+            Container(),
+            //
+            AnyWidget(),
+            // Any Number . widthBox or highBox use Space Widget
+            24.widthBox
+            //
+            AnyWidget(),
+        ]
+    );
+
+```

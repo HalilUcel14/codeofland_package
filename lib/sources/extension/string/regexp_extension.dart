@@ -24,15 +24,18 @@ extension RegexpExtension on String {
 
   ///--------------------------<PASSWORD>--------------------------------
   ///
+
+  String get _lowPassword => r'^.{6,}$';
+
   ///   String password1 = "123456"; // Basit seviye
   ///   Basit şifre deseni (en az 6 karakter)
-  String get _lowPassword => r'^.{6,}$';
   bool get isValidLowPassword => RegExp(_lowPassword).hasMatch(this);
+
+  String get _mediumPassword => r'^(?=.*[0-9])(?=.*[a-zA-Z]).{8,}$';
 
   ///
   ///   String password2 = "Password123"; // Orta seviye
   ///   Orta seviye şifre deseni (en az 8 karakter, en az bir rakam ve bir harf)
-  String get _mediumPassword => r'^(?=.*[0-9])(?=.*[a-zA-Z]).{8,}$';
   bool get isValidMediumPassword => RegExp(_mediumPassword).hasMatch(this);
 
   ///
@@ -40,6 +43,9 @@ extension RegexpExtension on String {
   ///   Zor seviye şifre deseni (en az 8 karakter, en az bir rakam, bir büyük harf, bir küçük harf ve bir özel karakter)
   String get _highPassword =>
       r'^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{8,}$';
+
+  ///   String password3 = "P@ssw0rd!"; // Zor seviye
+  ///   Zor seviye şifre deseni (en az 8 karakter, en az bir rakam, bir büyük harf, bir küçük harf ve bir özel karakter)
   bool get isValidHighPassword => RegExp(_highPassword).hasMatch(this);
   //
   //

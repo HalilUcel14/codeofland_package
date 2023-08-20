@@ -1,6 +1,6 @@
 name: codeofland
 description: My Core Components Archive For use My All Project
-version: 0.0.1
+version: 0.0.3
 
 
 homepage: https://github.com/HalilUcel14/codeofland
@@ -13,6 +13,9 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
+  ##------------------[FİREBASE]------------------------------
+  firebase_auth: ^4.7.3
+  firebase_core: ^2.15.1
   flutter:
     sdk: flutter
 
