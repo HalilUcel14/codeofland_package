@@ -135,16 +135,36 @@ Ne işe yarar: Firebase Auth Manager
 
 ```dart
 
-    Column(
-        children[
-            Container(),
-            //
-            AnyWidget(),
-            // Any Number . widthBox or highBox use Space Widget
-            24.widthBox
-            //
-            AnyWidget(),
-        ]
+    import 'package:codeofland/codeofland.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
+
+class FirebaseAuthExample extends StatelessWidget {
+  const FirebaseAuthExample({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    FirebaseAuthManager authManager =
+        FirebaseAuthManager.of(auth: FirebaseAuth.instance);
+    return Column(
+      children: [
+        // For Email Address
+        TextFormField(),
+        // For Password
+        TextFormField(),
+        // Show Uid CurrentUser
+        Text('${authManager.currentUser?.uid}'),
+        //
+        ElevatedButton(
+          onPressed: () {
+            authManager.signInWithEmailAndPassword(
+                email: 'email', password: 'password');
+          },
+          child: const Text('Giriş'),
+        ),
+      ],
     );
+  }
+}
 
 ```

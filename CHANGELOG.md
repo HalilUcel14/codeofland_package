@@ -1,4 +1,10 @@
-# 0.0.3 - 20.08.2023
+# 0.0.4 - 21.08.2023
+
+* TODO: Add CloudFirestoreManager
+* TODO: Add CloudFirestoreService
+* TODO: Add CloudFirestoreModel
+
+## 0.0.3 - 20.08.2023
 
 * TODO: Add FirebaseAuthManager
 * TODO: Add FirebaseAuthService

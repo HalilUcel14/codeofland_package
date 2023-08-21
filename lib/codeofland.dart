@@ -29,8 +29,6 @@ export 'sources/extension/string/text_space_extension.dart';
 
 ///
 export 'sources/extension/text_style/font_weight_extension.dart';
-
-///
 export 'sources/extension/widget/widget_extension.dart';
 export 'sources/firebase/authentication/firebase_auth_manager.dart';
 
@@ -40,4 +38,7 @@ export 'sources/firebase/authentication/firebase_auth_manager.dart';
 
 // -----------------------[AUTH]---------------------------
 export 'sources/firebase/authentication/firebase_auth_service.dart';
-  // write Usage Kode Sample
+// -----------------------[CLOUD]---------------------------
+export 'sources/firebase/cloud_firestore/cloud_firestore_manager.dart';
+export 'sources/firebase/cloud_firestore/cloud_firestore_service.dart';
+export 'sources/model/cloud_firestore_model.dart';

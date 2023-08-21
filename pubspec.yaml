@@ -1,6 +1,6 @@
 name: codeofland
-description: My Core Components Archive For use My All Project
-version: 0.0.3
+description: Tüm projelerimde ortak kullanabileceğim kodları barındırması amacı ile yazılmış bir pakettir. Paketi Readme.md dosyasını okuyarak aktif kullanabilirsiniz.
+version: 0.0.4
 
 
 homepage: https://github.com/HalilUcel14/codeofland
@@ -14,6 +14,7 @@ environment:
 
 dependencies:
   ##------------------[FİREBASE]------------------------------
+  cloud_firestore: ^4.8.5
   firebase_auth: ^4.7.3
   firebase_core: ^2.15.1
   flutter:
