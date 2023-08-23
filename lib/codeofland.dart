@@ -58,3 +58,6 @@ export 'sources/other/text_input_formatter.dart';
 /// ---------------------- [WİDGET]--------------------------
 ///------------------------------------------------------------
 export 'widget/custom_show_dialog.dart';
+
+// Add this line in your pubspec.yaml
+// Change Readme add File;
