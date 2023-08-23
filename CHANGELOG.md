@@ -1,3 +1,4 @@
+
 # 0.0.4 - 21.08.2023
 
 * TODO: Add CloudFirestoreManager

@@ -50,15 +50,14 @@ class CloudFirestoreManager extends CloudFirestoreService {
     }
   }
 
-  @override
-  Stream<QuerySnapshot<Map<String, dynamic>>> get getStream {
+  Stream<QuerySnapshot<Map<String, dynamic>>> get _getStream {
     return _collectionReference.snapshots();
   }
 
   @override
-  Future<List<CloudFirestoreModel?>> getListDataFromCloud() async {
+  Stream<List<CloudFirestoreModel?>> getStreamDataList() {
     try {
-      final list = getStream.map(
+      final list = _getStream.map(
         (QuerySnapshot<Map<String, dynamic>> snapshot) => snapshot.docs
             .map((document) {
               if (document.exists) {
@@ -72,7 +71,7 @@ class CloudFirestoreManager extends CloudFirestoreService {
             .where((element) => element != null)
             .toList(),
       );
-      return list as Future<List<CloudFirestoreModel>>;
+      return list;
     } catch (e) {
       if (kDebugMode) {
         print('GetListDataFromCloud has Error $_collectionReference');

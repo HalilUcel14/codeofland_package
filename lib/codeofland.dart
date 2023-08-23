@@ -41,5 +41,6 @@ export 'sources/firebase/authentication/firebase_auth_service.dart';
 // -----------------------[CLOUD]---------------------------
 export 'sources/firebase/cloud_firestore/cloud_firestore_manager.dart';
 export 'sources/firebase/cloud_firestore/cloud_firestore_service.dart';
+// -----------------------[MODEL]---------------------------
 export 'sources/model/cloud_firestore_model.dart';
  // Read me write how to use this packages

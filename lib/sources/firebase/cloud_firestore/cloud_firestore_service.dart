@@ -1,5 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-
 import '../../../codeofland.dart';
 
 abstract class CloudFirestoreService {
@@ -9,9 +7,7 @@ abstract class CloudFirestoreService {
       {required String documentId, required Map<String, dynamic> data}) async {}
   Future<void> deleteDocument({required String documentId}) async {}
 
-  Stream<QuerySnapshot<Map<String, dynamic>>> get getStream;
-
-  Future<List<CloudFirestoreModel?>> getListDataFromCloud();
+  Stream<List<CloudFirestoreModel?>> getStreamDataList();
 
   Future<CloudFirestoreModel?> getDataWithDocumentId(
       {required String documentId});
