@@ -1,6 +1,6 @@
 name: codeofland
 description: Tüm projelerimde ortak kullanabileceğim kodları barındırması amacı ile yazılmış bir pakettir. Paketi Readme.md dosyasını okuyarak aktif kullanabilirsiniz.
-version: 0.0.4
+version: 0.0.5
 
 
 homepage: https://github.com/HalilUcel14/codeofland
@@ -17,6 +17,8 @@ dependencies:
   cloud_firestore: ^4.8.5
   firebase_auth: ^4.7.3
   firebase_core: ^2.15.1
+  firebase_storage: ^11.2.6
+  ##------------------[FİREBASE]------------------------------
   flutter:
     sdk: flutter
 
