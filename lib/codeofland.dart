@@ -44,3 +44,4 @@ export 'sources/firebase/cloud_firestore/cloud_firestore_service.dart';
 // -----------------------[MODEL]---------------------------
 export 'sources/model/cloud_firestore_model.dart';
  // Read me write how to use this packages
+ // get data from cloud firestore and update package  
