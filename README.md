@@ -168,3 +168,67 @@ class FirebaseAuthExample extends StatelessWidget {
 }
 
 ```
+
+#### ---------------------------------------------------------------
+
+What does it do : With Spacing Widget
+Ne işe yarar: With Spacing Widget
+
+```dart
+
+    import 'package:codeofland/codeofland.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
+
+class WithSpacing extends StatelessWidget {
+  const WithSpacing({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ColumnWithSpacing(
+      spacing:10,
+      children: [
+        OneWidget(),
+        // SizedBox(height: 10),
+        TwoWidget(),
+        // SizedBox(height: 10),
+        ThreeWidget(),
+        
+      ],
+    );
+  }
+}
+
+```
+
+#### ----------------------------------------------------------------
+
+What does it do : With Spacing Widget
+Ne işe yarar: With Spacing Widget
+
+```dart
+
+    import 'package:codeofland/codeofland.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
+
+class WithSpacing extends StatelessWidget {
+  const WithSpacing({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return RowWithSpacing(
+      spacing:10,
+      children: [
+        OneWidget(),
+        // SizedBox(height: 10),
+        TwoWidget(),
+        // SizedBox(height: 10),
+        ThreeWidget(),
+        
+      ],
+    );
+  }
+}
+
+```

@@ -53,11 +53,14 @@ export 'sources/model/language_model.dart';
 /// ---------------------- [OTHER]--------------------------
 ///------------------------------------------------------------
 export 'sources/other/text_input_formatter.dart';
+export 'widget/animate/animated_slide_route.dart';
 
 ///------------------------------------------------------------
 /// ---------------------- [WİDGET]--------------------------
 ///------------------------------------------------------------
-export 'widget/custom_show_dialog.dart';
+export 'widget/dialog/custom_show_dialog.dart';
+export 'widget/with_spacing/column_with_spacing.dart';
+export 'widget/with_spacing/row_with_spacing.dart';
 
 // Add this line in your pubspec.yaml
 // Change Readme add File;

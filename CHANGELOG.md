@@ -1,5 +1,13 @@
 # Halil Ücel Code Library
 
+## 0.0.6 - 23.08.2023
+
+* TODO: Add context.SizeOf()
+* TODO: Add context.OrientationOf()
+* TODO: Add context.ViewInsertOf()
+* TODO: Add context.ViewPaddingOf()
+* TODO: Add AnimatedSlideRoute (Lefttoright,Righttoleft,Toptobottom,Bottomtotop)
+
 ## 0.0.5 - 23.08.2023
 
 * TODO: Add FirebaseStorageService
