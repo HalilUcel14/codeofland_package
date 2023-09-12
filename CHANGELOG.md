@@ -1,5 +1,12 @@
 # Halil Ücel Code Library
 
+## 0.0.7 - 12.09.2023
+
+* TODO: Add Responsive Widget
+* TODO: Add LifeCycleWidget
+* TODO: Add WebLifeCycle
+* TODO: Add DeviceSize Class
+
 ## 0.0.6 - 23.08.2023
 
 * TODO: Add context.SizeOf()

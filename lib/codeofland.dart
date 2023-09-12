@@ -2,6 +2,7 @@ library codeofland;
 
 export 'sources/base_model/base_model.dart';
 export 'sources/base_model/firestore_model.dart';
+export 'sources/device/device_size.dart';
 export 'sources/exception/cloud_firestore_exception.dart';
 
 ///--------------------------------------------------
@@ -45,6 +46,12 @@ export 'sources/firebase/cloud_firestore/cloud_firestore_service.dart';
 // -----------------------[CLOUD]---------------------------
 export 'sources/firebase/storage/firebase_storage_manager.dart';
 export 'sources/firebase/storage/firebase_storage_service.dart';
+export 'sources/life_cycle/life_cycle_widget.dart';
+
+///------------------------------------------------------------
+/// ---------------------- [WİDGET]--------------------------
+///------------------------------------------------------------
+export 'sources/life_cycle/web_project_lifecycle.dart';
 // -----------------------[MODEL]---------------------------
 export 'sources/model/cloud_firestore_model.dart';
 export 'sources/model/language_model.dart';
@@ -59,8 +66,10 @@ export 'widget/animate/animated_slide_route.dart';
 /// ---------------------- [WİDGET]--------------------------
 ///------------------------------------------------------------
 export 'widget/dialog/custom_show_dialog.dart';
+export 'widget/responsive/responsive_widget.dart';
 export 'widget/with_spacing/column_with_spacing.dart';
 export 'widget/with_spacing/row_with_spacing.dart';
+
 
 // Add this line in your pubspec.yaml
 // Change Readme add File;
