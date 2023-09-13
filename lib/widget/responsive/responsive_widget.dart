@@ -37,4 +37,6 @@ class _ResponsiveWidgetState extends State<ResponsiveWidget> {
   }
 }
 
+/// Device type enum
+
 enum DeviceType { mobile, tablet, desktop }
