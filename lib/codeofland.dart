@@ -61,6 +61,7 @@ export 'sources/model/language_model.dart';
 ///------------------------------------------------------------
 export 'sources/other/text_input_formatter.dart';
 export 'widget/animate/animated_slide_route.dart';
+export 'widget/cursor/mouse_region_widget.dart';
 
 ///------------------------------------------------------------
 /// ---------------------- [WİDGET]--------------------------

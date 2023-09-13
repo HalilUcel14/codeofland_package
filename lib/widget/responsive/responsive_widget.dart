@@ -25,24 +25,15 @@ class _ResponsiveWidgetState extends State<ResponsiveWidget> {
 
   @override
   Widget build(BuildContext context) {
-    double mobileSize = widget.mobileWith ?? DeviceSize.mobileWidth;
-    double desktopSize = widget.desktopWith ?? DeviceSize.desktopWidth;
-
-    return LayoutBuilder(
-      key: widget.layoutKey,
-      builder: (context, constraint) {
-        setState(() {
-          _deviceType = constraint.maxWidth < mobileSize
-              ? DeviceType.mobile
-              : constraint.maxWidth >= mobileSize &&
-                      constraint.maxWidth < desktopSize
-                  ? DeviceType.tablet
-                  : DeviceType.desktop;
-        });
-
-        return widget.responsiveBuilder(_deviceType);
-      },
-    );
+    if (context.screenWidth < (widget.mobileWith ?? DeviceSize.mobileWidth)) {
+      _deviceType = DeviceType.mobile;
+    } else if (context.screenWidth <
+        (widget.desktopWith ?? DeviceSize.desktopWidth)) {
+      _deviceType = DeviceType.tablet;
+    } else {
+      _deviceType = DeviceType.desktop;
+    }
+    return widget.responsiveBuilder(_deviceType);
   }
 }
 
