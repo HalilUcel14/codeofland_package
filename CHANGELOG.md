@@ -1,5 +1,9 @@
 # Halil Ücel Code Library
 
+## 0.0.8 - 13.09.2023
+
+* TODO: Add Responsive Widget Fixed Bugs
+
 ## 0.0.7 - 12.09.2023
 
 * TODO: Add Responsive Widget
