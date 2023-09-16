@@ -1,51 +1,61 @@
+import 'package:codeofland/codeofland.dart';
 import 'package:flutter/material.dart';
 
-import '../../codeofland.dart';
-
-class ResponsiveWidget extends StatefulWidget {
+class ResponsiveWidget extends StatelessWidget {
   const ResponsiveWidget({
     super.key,
-    this.layoutKey,
-    this.mobileWith,
-    this.desktopWith,
-    required this.responsiveBuilder,
+    this.mobileWidthSize,
+    this.desktopWidthSize,
+    required this.builder,
+    this.layoutBuilderIsActive = false,
   });
 
-  final Widget Function(bool isDesktop, bool isTablet, bool isMobile)
-      responsiveBuilder;
-  final Key? layoutKey;
-  final double? mobileWith;
-  final double? desktopWith;
+  final double? mobileWidthSize;
+  final double? desktopWidthSize;
+  final bool layoutBuilderIsActive;
 
-  @override
-  State<ResponsiveWidget> createState() => _ResponsiveWidgetState();
-}
-
-class _ResponsiveWidgetState extends State<ResponsiveWidget> {
-  bool _isDesktop = false;
-  bool _isTablet = false;
-  bool _isMobile = false;
+  final Widget Function(bool isDesktop, bool isTablet, bool isMobile) builder;
 
   @override
   Widget build(BuildContext context) {
-    if (context.screenWidth < (widget.mobileWith ?? DeviceSize.mobileWidth)) {
-      _isMobile = true;
-      _isTablet = false;
-      _isDesktop = false;
-    } else if (context.screenWidth <
-        (widget.desktopWith ?? DeviceSize.desktopWidth)) {
-      _isTablet = true;
-      _isDesktop = false;
-      _isMobile = false;
+    bool mobile = false;
+    bool tablet = false;
+    bool desktop = false;
+
+    if (layoutBuilderIsActive) {
+      return LayoutBuilder(
+        builder: (context, constraints) {
+          if (constraints.maxWidth < (mobileWidthSize ?? 600)) {
+            mobile = true;
+            tablet = false;
+            desktop = false;
+          } else if (constraints.maxWidth < (desktopWidthSize ?? 1200)) {
+            tablet = true;
+            mobile = false;
+            desktop = false;
+          } else {
+            desktop = true;
+            mobile = false;
+            tablet = false;
+          }
+          return builder(desktop, tablet, mobile);
+        },
+      );
     } else {
-      _isDesktop = true;
-      _isTablet = false;
-      _isMobile = false;
+      if (context.screenWidth < (mobileWidthSize ?? 600)) {
+        mobile = true;
+        tablet = false;
+        desktop = false;
+      } else if (context.screenWidth < (desktopWidthSize ?? 1200)) {
+        tablet = true;
+        mobile = false;
+        desktop = false;
+      } else {
+        desktop = true;
+        mobile = false;
+        tablet = false;
+      }
+      return builder(desktop, tablet, mobile);
     }
-    return widget.responsiveBuilder(_isDesktop, _isTablet, _isMobile);
   }
 }
-
-/// Device type enum
-
-enum DeviceType { mobile, tablet, desktop }
