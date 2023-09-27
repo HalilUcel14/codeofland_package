@@ -1,5 +1,9 @@
 # Halil Ücel Code Library
 
+## 0.1.1 - 27.09.2023
+
+* TODO: Add Const Values - Duration And Number
+
 ## 0.1.0 - 16.09.2023
 
 * TODO: Add Responsive Widget Change Method and Fixed Bugs and Three Options

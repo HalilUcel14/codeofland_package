@@ -231,4 +231,25 @@ class WithSpacing extends StatelessWidget {
   }
 }
 
+
+
+```
+
+### Code sample: Const Duration or Number
+
+What does it do : Number ve Duration için gelen yenilikler eklendi
+Ne işe yarar: Number ve Duration için gelen yenilikler eklendi
+
+```dart
+    // Navigator on BuildContext .Dot Function
+    ElevatedButton(
+        // context. pushReplacement - push - pop and many function
+        onPressed: () => context.push(HomeWidget()),
+        child: Text(
+          'Goto Home Widget',
+          fontSize: AppNum.gap8(),
+          duration: AppDuration.second(20),
+        );
+    );
+
 ```

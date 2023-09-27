@@ -1,5 +1,11 @@
 library codeofland;
 
+///------------------------------------------------------------
+/// ---------------------- [WİDGET]--------------------------
+///------------------------------------------------------------
+
+export 'const/duration_const.dart';
+export 'const/nums_const.dart';
 export 'sources/base_model/base_model.dart';
 export 'sources/base_model/firestore_model.dart';
 export 'sources/device/device_size.dart';
@@ -70,10 +76,6 @@ export 'widget/dialog/custom_show_dialog.dart';
 export 'widget/responsive/responsive_widget.dart';
 export 'widget/with_spacing/column_with_spacing.dart';
 export 'widget/with_spacing/row_with_spacing.dart';
-
-///------------------------------------------------------------
-/// ---------------------- [WİDGET]--------------------------
-///------------------------------------------------------------
 
 // Add this line in your pubspec.yaml
 // Change Readme add File;
