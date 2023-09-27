@@ -71,6 +71,9 @@ export 'widget/responsive/responsive_widget.dart';
 export 'widget/with_spacing/column_with_spacing.dart';
 export 'widget/with_spacing/row_with_spacing.dart';
 
+///------------------------------------------------------------
+/// ---------------------- [WİDGET]--------------------------
+///------------------------------------------------------------
 
 // Add this line in your pubspec.yaml
 // Change Readme add File;
