@@ -253,3 +253,21 @@ Ne işe yarar: Number ve Duration için gelen yenilikler eklendi
     );
 
 ```
+
+### Code sample: Convertable Text
+
+What does it do : Simple Use for Text Widget
+Ne işe yarar: Text Widget için Kolay Kullanım.
+
+```dart
+    Column{
+      children:[
+        ConvertableText(
+          text: "Test Text",
+          style: context.textTheme.headLineSmall,
+          color: context.colorScheme.primary,
+        ),
+      ]
+    }
+
+```
