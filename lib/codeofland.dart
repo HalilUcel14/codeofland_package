@@ -74,6 +74,7 @@ export 'widget/cursor/mouse_region_widget.dart';
 ///------------------------------------------------------------
 export 'widget/dialog/custom_show_dialog.dart';
 export 'widget/responsive/responsive_widget.dart';
+export 'widget/text/convertable_text.dart';
 export 'widget/with_spacing/column_with_spacing.dart';
 export 'widget/with_spacing/row_with_spacing.dart';
 
