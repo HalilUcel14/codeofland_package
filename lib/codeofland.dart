@@ -34,6 +34,7 @@ export 'sources/extension/string/nullable_extension.dart';
 export 'sources/extension/string/regexp_extension.dart';
 export 'sources/extension/string/string_extension.dart';
 export 'sources/extension/string/text_space_extension.dart';
+export 'sources/extension/text/text_with_copyable.dart';
 
 ///
 export 'sources/extension/text_style/font_weight_extension.dart';
@@ -73,6 +74,7 @@ export 'widget/cursor/mouse_region_widget.dart';
 /// ---------------------- [WİDGET]--------------------------
 ///------------------------------------------------------------
 export 'widget/dialog/custom_show_dialog.dart';
+export 'widget/image/network_image_builder.dart';
 export 'widget/responsive/responsive_widget.dart';
 export 'widget/text/convertable_text.dart';
 export 'widget/with_spacing/column_with_spacing.dart';
