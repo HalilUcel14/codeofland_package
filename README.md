@@ -271,3 +271,17 @@ Ne işe yarar: Text Widget için Kolay Kullanım.
     }
 
 ```
+
+### Code sample: NEtwork Image Widget
+
+What does it do : Simple Use for Network Image Widget
+Ne işe yarar: NEtwork Image Widget için Kolay Kullanım.
+
+```dart
+    Column{
+      children:[
+        NetworkImageWidget(imageUrl:'https://.......')
+      ]
+    }
+
+```
