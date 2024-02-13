@@ -14,6 +14,36 @@
 
 ### Installing
 
+### <-------------------------[ PAGES ]--------------------------->
+
+1.**CONST**
+
+* Duration
+
+### DATABASE
+
+#### - - - Firebase
+
+##### - - - Hive
+
+##### - - - Supabase
+
+#### -- ENUM
+
+##### - - - Device
+
+##### - - - Theme
+
+##### - - - View
+
+#### -- feauture
+
+#### -- interfa
+
+#### -- model
+
+#### -- other
+
 Tr: Paketimizi projenize eklemek için aşağıdaki adımları takip edebilirsiniz.
 En: bla bla bla
 
