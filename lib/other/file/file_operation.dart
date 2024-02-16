@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
-import 'package:path/path.dart' as p;
+import 'package:path/path.dart' as paths;
 import 'package:path_provider/path_provider.dart';
 
 @immutable
@@ -19,7 +19,7 @@ final class FileOperation {
     final appDocDir = await getApplicationDocumentsDirectory();
     final appDocPath = appDocDir.path;
 
-    final dirPath = p.join(appDocPath, path);
+    final dirPath = paths.join(appDocPath, path);
     final newDirectory = Directory(dirPath);
     return newDirectory;
   }

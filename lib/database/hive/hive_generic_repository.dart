@@ -1,3 +1,5 @@
+// ignore_for_file: unused_element
+
 import 'package:hive/hive.dart';
 
 abstract class HiveRepository<T> {
