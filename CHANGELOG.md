@@ -1,5 +1,9 @@
 # Halil Ücel Code Library
 
+## 1.0.0 - 16.02.2023
+
+* TODO: Hive Database
+
 ## 0.1.4 - 21.10.2023
 
 * TODO: Add Universal_Html Packages
