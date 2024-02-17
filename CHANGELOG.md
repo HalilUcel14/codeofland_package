@@ -1,5 +1,9 @@
 # Halil Ücel Code Library
 
+## 1.0.5 - 17.02.2023
+
+* TODO: Change Methods
+
 ## 1.0.0 - 16.02.2023
 
 * TODO: Hive Database
