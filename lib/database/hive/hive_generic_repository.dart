@@ -13,17 +13,17 @@ abstract class HiveRepository<T> {
     hiveBox = await Hive.openBox<T>(boxName);
   }
 
-  Future<void> closeBox(Box<T> box) async {
+  Future<void> closeBox() async {
     await hiveBox.close();
   }
 
-  Future<void> addItem(T item);
+  Future<void> addItem(String id, T item);
 
   Future<List<T>> getAllItem();
 
   Future<T> getItemById(String id);
 
-  Future<void> update(T item);
+  Future<void> update(String id, T item);
 
-  Future<void> delete(T item);
+  Future<void> delete(String id);
 }
