@@ -20,8 +20,6 @@ extension MediaQueryExtension on BuildContext {
   //
   EdgeInsets get viewPaddingOf => MediaQuery.viewPaddingOf(this);
   //
-  double get textScaleFactorOf => MediaQuery.textScaleFactorOf(this);
-  //
 }
 
 extension KeyboardContextExtension on BuildContext {

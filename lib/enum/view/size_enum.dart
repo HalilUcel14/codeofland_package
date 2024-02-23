@@ -1,4 +1,4 @@
-enum ViewEnum {
+enum SizeEnum {
   /// Size: 8
   octa(8),
 
@@ -31,5 +31,5 @@ enum ViewEnum {
   ;
 
   final double size;
-  const ViewEnum(this.size);
+  const SizeEnum(this.size);
 }

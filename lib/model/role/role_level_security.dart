@@ -4,7 +4,7 @@ import 'package:equatable/equatable.dart';
 final class RoleLevelSecurityModel extends Equatable
     implements BaseModel<RoleLevelSecurityModel> {
   @override
-  final String? id;
+  final String id;
   final bool? read;
   final bool? write;
   final bool? update;
@@ -15,7 +15,7 @@ final class RoleLevelSecurityModel extends Equatable
     this.write,
     this.update,
     this.delete,
-    this.id,
+    required this.id,
   });
 
   @override
