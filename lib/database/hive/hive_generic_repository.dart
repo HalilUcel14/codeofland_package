@@ -10,11 +10,15 @@ abstract class HiveRepository<T> {
   HiveRepository({required this.boxName});
 
   Future<void> openBox() async {
-    hiveBox = await Hive.openBox<T>(boxName);
+    if (!hiveBox.isOpen) {
+      hiveBox = await Hive.openBox<T>(boxName);
+    }
   }
 
   Future<void> closeBox() async {
-    await hiveBox.close();
+    if (hiveBox.isOpen) {
+      await hiveBox.close();
+    }
   }
 
   Future<void> addItem(String id, T item);
