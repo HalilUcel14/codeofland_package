@@ -1,5 +1,13 @@
 # Halil Ücel Code Library
 
+## 1.2.3 - 24.02.2023
+
+* TODO: Hive Method add OpenBox
+
+## 1.2.2 - 24.02.2023
+
+* TODO: Hive Method add OpenBox
+
 ## 1.2.0 - 23.02.2023
 
 * TODO: Update Methods

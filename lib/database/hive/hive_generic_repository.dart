@@ -5,21 +5,19 @@ import 'package:hive/hive.dart';
 abstract class HiveRepository<T> {
   final String boxName;
   //
-  late final Box<T> hiveBox;
+  Box<T> get hiveBox;
 
   HiveRepository({required this.boxName});
 
-  Future<void> openBox() async {
-    if (!hiveBox.isOpen) {
-      hiveBox = await Hive.openBox<T>(boxName);
-    }
-  }
+  ///  if (!hiveBox.isOpen) {
+  ///    hiveBox = await Hive.openBox<T>(boxName);
+  ///  }
+  Future<void> openBox();
 
-  Future<void> closeBox() async {
-    if (hiveBox.isOpen) {
-      await hiveBox.close();
-    }
-  }
+  ///  if (hiveBox.isOpen) {
+  ///    await hiveBox.close();
+  ///  }
+  Future<void> closeBox();
 
   Future<void> addItem(String id, T item);
 
