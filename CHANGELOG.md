@@ -1,5 +1,9 @@
 # Halil Ücel Code Library
 
+## 1.3.0 - 24.02.2023
+
+* TODO: Change HiveBox All Repository
+
 ## 1.2.3 - 24.02.2023
 
 * TODO: Hive Method add OpenBox
