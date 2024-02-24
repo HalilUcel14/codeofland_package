@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 
 abstract class BaseModel<T> extends Equatable {
-  String get id;
+  String? get uid;
 
   T fromJson(Map<String, dynamic> json);
 
