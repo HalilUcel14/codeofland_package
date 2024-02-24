@@ -4,7 +4,7 @@ import 'package:equatable/equatable.dart';
 final class RoleLevelSecurityModel extends Equatable
     implements BaseModel<RoleLevelSecurityModel> {
   @override
-  final String id;
+  final String? uid;
   final bool? read;
   final bool? write;
   final bool? update;
@@ -15,11 +15,11 @@ final class RoleLevelSecurityModel extends Equatable
     this.write,
     this.update,
     this.delete,
-    required this.id,
+    this.uid,
   });
 
   @override
-  List<Object?> get props => [read, write, update, delete];
+  List<Object?> get props => [read, write, update, delete, uid];
 
   @override
   RoleLevelSecurityModel fromJson(Map<String, dynamic> json) {
@@ -28,14 +28,14 @@ final class RoleLevelSecurityModel extends Equatable
       write: json['write'],
       update: json['update'],
       delete: json['delete'],
-      id: json['id'],
+      uid: json['id'],
     );
   }
 
   @override
   Map<String, dynamic> toJson() {
     return {
-      'id': id,
+      'uid': uid,
       'read': read,
       'write': write,
       'update': update,
