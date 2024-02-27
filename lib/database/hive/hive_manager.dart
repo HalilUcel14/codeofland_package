@@ -5,7 +5,7 @@ abstract class HiveDatabase<T> {
   //
   Future<void> openBox();
   Future<void> closeBox();
-  Future<T> readBox(String id);
+  Future<T?> readBox(String id);
   Future<List<T>> listBox();
   Future<bool> addBox(String id, T item);
   Future<bool> updateBox(String id, T item);
@@ -18,6 +18,8 @@ final class HiveDatabaseManager<T> extends HiveDatabase<T> {
   final String _key = T.toString();
 
   late Box<T> _box;
+
+  Box<T> get box => _box;
 
   @override
   Future<void> openBox() async {
@@ -36,19 +38,17 @@ final class HiveDatabaseManager<T> extends HiveDatabase<T> {
   Future<List<T>> listBox() async {
     try {
       await openBox();
-      final box = Hive.box<T>(_key);
-      return box.values.toList();
+      return _box.values.toList();
     } catch (e) {
       throw HiveException.read(e);
     }
   }
 
   @override
-  Future<T> readBox(String id) async {
+  Future<T?> readBox(String id) async {
     try {
       await openBox();
-      final box = Hive.box(_key);
-      return box.get(id);
+      return _box.get(id);
     } catch (e) {
       throw HiveException.read(e);
     }
@@ -58,8 +58,7 @@ final class HiveDatabaseManager<T> extends HiveDatabase<T> {
   Future<bool> addBox(String id, T item) async {
     try {
       await openBox();
-      final box = Hive.box<T>(_key);
-      await box.put(id, item);
+      await _box.put(id, item);
       return true;
     } catch (e) {
       throw HiveException.write(e);
@@ -70,8 +69,7 @@ final class HiveDatabaseManager<T> extends HiveDatabase<T> {
   Future<bool> deleteBox(String id) async {
     try {
       await openBox();
-      final box = Hive.box<T>(_key);
-      await box.delete(id);
+      await _box.delete(id);
       return true;
     } catch (e) {
       throw HiveException.delete(e);
@@ -82,8 +80,7 @@ final class HiveDatabaseManager<T> extends HiveDatabase<T> {
   Future<bool> updateBox(String id, T item) async {
     try {
       await openBox();
-      final box = Hive.box<T>(_key);
-      await box.put(id, item);
+      await _box.put(id, item);
       return true;
     } catch (e) {
       throw HiveException.update(e);
