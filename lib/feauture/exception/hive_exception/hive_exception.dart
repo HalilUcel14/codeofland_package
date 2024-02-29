@@ -6,6 +6,7 @@ final class HiveException<T> implements Exception {
   final T? item;
 
   //
+  HiveException(this.error, {this.item, this.type});
   HiveException.write(this.error, {this.item, this.type = "Write"});
   HiveException.read(this.error, {this.item, this.type = "Read"});
   HiveException.update(this.error, {this.item, this.type = "Update"});
