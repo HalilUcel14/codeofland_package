@@ -19,32 +19,51 @@ final class HiveDatabaseManager<T> extends HiveDatabase<T> {
 
   late Box<T>? _box;
 
-  Box<T> get box {
-    if (_box == null) {
-      throw HiveException('Hive Dosyası Null').debugPrint;
+  Future<Box<T>> get box async {
+    try {
+      return (_box == null || !_box!.isOpen)
+          ? _box!
+          : _box = await Hive.openBox<T>(_key);
+    } catch (e) {
+      throw HiveException(e).debugPrint;
     }
-    if (!_box!.isOpen) {
-      throw HiveException('Hive Kutusu Açık Değil').debugPrint;
-    }
-    return _box!;
   }
 
   @override
   Future<void> openBox() async {
-    if (Hive.isBoxOpen(_key)) return;
-    _box = await Hive.openBox<T>(_key);
+    try {
+      if (Hive.isBoxOpen(_key)) return;
+      _box = await Hive.openBox<T>(_key);
+    } catch (e) {
+      throw HiveException(e).debugPrint;
+    }
   }
 
   @override
-  Future<void> closeBox() => box.close();
+  Future<void> closeBox() async {
+    try {
+      final myBox = await box;
+      myBox.close();
+    } catch (e) {
+      throw HiveException(e).debugPrint;
+    }
+  }
 
   @override
-  Future<void> clear() => box.clear();
+  Future<void> clear() async {
+    try {
+      final myBox = await box;
+      myBox.clear();
+    } catch (e) {
+      throw HiveException(e).debugPrint;
+    }
+  }
 
   @override
   Future<List<T>> listBox() async {
     try {
-      return box.values.toList();
+      final myBox = await box;
+      return myBox.values.toList();
     } catch (e) {
       throw HiveException.read(e).debugPrint;
     }
@@ -53,7 +72,8 @@ final class HiveDatabaseManager<T> extends HiveDatabase<T> {
   @override
   Future<T?> readBox(String id) async {
     try {
-      return box.get(id);
+      final myBox = await box;
+      return myBox.get(id);
     } catch (e) {
       throw HiveException.read(e).debugPrint;
     }
@@ -62,7 +82,8 @@ final class HiveDatabaseManager<T> extends HiveDatabase<T> {
   @override
   Future<bool> addBox(String id, T item) async {
     try {
-      await box.put(id, item);
+      final myBox = await box;
+      await myBox.put(id, item);
       return true;
     } catch (e) {
       throw HiveException.write(e).debugPrint;
@@ -72,7 +93,8 @@ final class HiveDatabaseManager<T> extends HiveDatabase<T> {
   @override
   Future<bool> deleteBox(String id) async {
     try {
-      await box.delete(id);
+      final myBox = await box;
+      await myBox.delete(id);
       return true;
     } catch (e) {
       throw HiveException.delete(e).debugPrint;
@@ -82,7 +104,8 @@ final class HiveDatabaseManager<T> extends HiveDatabase<T> {
   @override
   Future<bool> updateBox(String id, T item) async {
     try {
-      await box.put(id, item);
+      final myBox = await box;
+      await myBox.put(id, item);
       return true;
     } catch (e) {
       throw HiveException.update(e).debugPrint;
