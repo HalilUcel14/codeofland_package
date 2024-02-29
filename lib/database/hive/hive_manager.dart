@@ -1,118 +1,176 @@
 import 'package:codeofland/codeofland.dart';
 import 'package:hive/hive.dart';
 
-abstract class HiveDatabase<T> {
-  //
-  Future<void> openBox();
-  Future<void> closeBox();
-  Future<T?> readBox(String id);
-  Future<List<T>> listBox();
-  Future<bool> addBox(String id, T item);
-  Future<bool> updateBox(String id, T item);
-  Future<bool> deleteBox(String id);
-  //
-  Future<void> clear();
-}
-
-class HiveDatabaseManager<T> extends HiveDatabase<T> {
+abstract class IHiveManager<T> {
   final String _key;
 
   late Box<T> _box;
 
-  HiveDatabaseManager() : _key = T.toString();
+  Box<T> get box => _box;
 
-  Future<Box<T>> get boxT async {
-    try {
-      return _box.isOpen ? _box : await Hive.openBox<T>(_key);
-    } catch (e) {
-      throw HiveException(e).debugPrint;
-    }
+  IHiveManager() : _key = T.toString() {
+    openBox();
   }
 
-  @override
+  //
   Future<void> openBox() async {
-    try {
-      if (Hive.isBoxOpen(_key)) return;
-
-      _box = await Hive.openBox<T>(_key);
-    } catch (e) {
-      throw HiveException(e).debugPrint;
-    }
+    await Hive.openBox<T>(_key);
+    _box = Hive.box<T>(_key);
   }
 
-  @override
-  Future<void> closeBox() async {
-    try {
-      final myBox = await boxT;
-      myBox.close();
-    } catch (e) {
-      throw HiveException(e).debugPrint;
-    }
+  void closeBox() {
+    _box.close();
   }
 
-  @override
-  Future<void> clear() async {
+  T? readBox(String id) {
     try {
-      final myBox = await boxT;
-      myBox.clear();
-    } catch (e) {
-      throw HiveException(e).debugPrint;
-    }
-  }
-
-  @override
-  Future<List<T>> listBox() async {
-    try {
-      final myBox = await boxT;
-      return myBox.values.toList();
+      return _box.get(id);
     } catch (e) {
       throw HiveException.read(e).debugPrint;
     }
   }
 
-  @override
-  Future<T?> readBox(String id) async {
+  List<T> listBox() {
     try {
-      final myBox = await boxT;
-      return myBox.get(id);
+      return _box.values.toList();
     } catch (e) {
-      throw HiveException.read(e).debugPrint;
+      HiveException.read(e).debugPrint;
     }
+    return [];
   }
 
-  @override
   Future<bool> addBox(String id, T item) async {
     try {
-      final myBox = await boxT;
-      await myBox.put(id, item);
+      await _box.put(id, item);
       return true;
     } catch (e) {
       throw HiveException.write(e).debugPrint;
     }
   }
 
-  @override
+  Future<bool> updateBox(String id, T item) async {
+    try {
+      await _box.put(id, item);
+      return true;
+    } catch (e) {
+      throw HiveException.update(e).debugPrint;
+    }
+  }
+
   Future<bool> deleteBox(String id) async {
     try {
-      final myBox = await boxT;
-      await myBox.delete(id);
+      await _box.delete(id);
       return true;
     } catch (e) {
       throw HiveException.delete(e).debugPrint;
     }
   }
 
-  @override
-  Future<bool> updateBox(String id, T item) async {
+  //
+  Future<int> clear() async {
     try {
-      final myBox = await boxT;
-      await myBox.put(id, item);
-      return true;
+      return await _box.clear();
     } catch (e) {
-      throw HiveException.update(e).debugPrint;
+      throw HiveException(e);
     }
   }
 }
+
+
+
+// class HiveDatabaseManager<T> extends IHiveManager<T> {
+//   Future<Box<T>> get boxT async {
+//     try {
+//       return _box.isOpen ? _box : await Hive.openBox<T>(_key);
+//     } catch (e) {
+//       throw HiveException(e).debugPrint;
+//     }
+//   }
+
+//   @override
+//   Future<void> openBox() async {
+//     try {
+//       if (Hive.isBoxOpen(_key)) return;
+
+//       _box = await Hive.openBox<T>(_key);
+//     } catch (e) {
+//       throw HiveException(e).debugPrint;
+//     }
+//   }
+
+//   @override
+//   Future<void> closeBox() async {
+//     try {
+//       final myBox = await boxT;
+//       myBox.close();
+//     } catch (e) {
+//       throw HiveException(e).debugPrint;
+//     }
+//   }
+
+//   @override
+//   Future<void> clear() async {
+//     try {
+//       final myBox = await boxT;
+//       myBox.clear();
+//     } catch (e) {
+//       throw HiveException(e).debugPrint;
+//     }
+//   }
+
+//   @override
+//   Future<List<T>> listBox() async {
+//     try {
+//       final myBox = await boxT;
+//       return myBox.values.toList();
+//     } catch (e) {
+//       throw HiveException.read(e).debugPrint;
+//     }
+//   }
+
+//   @override
+//   Future<T?> readBox(String id) async {
+//     try {
+//       final myBox = await boxT;
+//       return myBox.get(id);
+//     } catch (e) {
+//       throw HiveException.read(e).debugPrint;
+//     }
+//   }
+
+//   @override
+//   Future<bool> addBox(String id, T item) async {
+//     try {
+//       final myBox = await boxT;
+//       await myBox.put(id, item);
+//       return true;
+//     } catch (e) {
+//       throw HiveException.write(e).debugPrint;
+//     }
+//   }
+
+//   @override
+//   Future<bool> deleteBox(String id) async {
+//     try {
+//       final myBox = await boxT;
+//       await myBox.delete(id);
+//       return true;
+//     } catch (e) {
+//       throw HiveException.delete(e).debugPrint;
+//     }
+//   }
+
+//   @override
+//   Future<bool> updateBox(String id, T item) async {
+//     try {
+//       final myBox = await boxT;
+//       await myBox.put(id, item);
+//       return true;
+//     } catch (e) {
+//       throw HiveException.update(e).debugPrint;
+//     }
+//   }
+// }
 
 
 
