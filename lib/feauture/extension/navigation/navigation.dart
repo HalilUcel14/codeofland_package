@@ -5,21 +5,24 @@ extension NavigatorContextExtension on BuildContext {
     await Navigator.push(this, MaterialPageRoute(builder: (_) => toPage));
   }
 
-  Future<dynamic> pushReplacement(Widget toPage) async {
-    await Navigator.pushReplacement(
-        this,
-        MaterialPageRoute(
-          builder: (_) => toPage,
-        ));
+  Future<T?> pushReplacement<T>(
+    Widget toPage,
+  ) async {
+    return await Navigator.pushReplacement<T, void>(
+      this,
+      MaterialPageRoute<T>(
+        builder: (_) => toPage,
+      ),
+    );
   }
 
-  Future<dynamic> pushNamed(String pagePath, {Object? agrument}) async {
-    await Navigator.pushNamed(this, pagePath, arguments: agrument);
+  Future<void> pushNamed<T>(String pagePath, {T? agrument}) async {
+    await Navigator.pushNamed<T>(this, pagePath, arguments: agrument);
   }
 
-  Future<dynamic> pushNamedAndRemoveUntil(String pagePath,
-      {Object? argument}) async {
-    await Navigator.pushNamedAndRemoveUntil(
+  Future<void> pushNamedAndRemoveUntil<T>(String pagePath,
+      {T? argument}) async {
+    await Navigator.pushNamedAndRemoveUntil<T>(
       this,
       pagePath,
       (route) => false,
