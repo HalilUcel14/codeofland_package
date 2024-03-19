@@ -12,7 +12,7 @@ final class HiveInitializer {
   ///
   Future<void> init() async {
     final appDirectory = await path_provider.getApplicationDocumentsDirectory();
-    _hivePath = "${appDirectory.path}/hiveDatabase";
+    _hivePath = "${appDirectory.path}/HiveDatabase";
     await Hive.initFlutter(_hivePath);
   }
 

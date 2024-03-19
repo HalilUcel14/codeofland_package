@@ -1,4 +1,4 @@
-enum SizeEnum {
+enum SizeType {
   /// Size: 8
   octa(8),
 
@@ -31,5 +31,5 @@ enum SizeEnum {
   ;
 
   final double size;
-  const SizeEnum(this.size);
+  const SizeType(this.size);
 }

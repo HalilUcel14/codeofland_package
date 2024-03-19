@@ -3,16 +3,16 @@ import 'package:flutter/material.dart';
 
 extension DeviceWidthExtension on BuildContext {
   bool get isMobileWidth =>
-      sizeOf.width >= DeviceEnum.mobile.min &&
-      sizeOf.height <= DeviceEnum.mobile.max;
+      sizeOf.width >= DeviceSize.mobile.min &&
+      sizeOf.height <= DeviceSize.mobile.max;
   //
   bool get isTabletWidth =>
-      sizeOf.width >= DeviceEnum.tablet.min &&
-      sizeOf.height <= DeviceEnum.tablet.max;
+      sizeOf.width >= DeviceSize.tablet.min &&
+      sizeOf.height <= DeviceSize.tablet.max;
   //
   bool get isDesktopWidth =>
-      sizeOf.width >= DeviceEnum.desktop.min &&
-      sizeOf.height <= DeviceEnum.desktop.max;
+      sizeOf.width >= DeviceSize.desktop.min &&
+      sizeOf.height <= DeviceSize.desktop.max;
   //
-  bool get isQuadroWidth => sizeOf.width >= DeviceEnum.quadraVista.min;
+  bool get isQuadroWidth => sizeOf.width >= DeviceSize.quadraVista.min;
 }
