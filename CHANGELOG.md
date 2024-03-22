@@ -1,5 +1,9 @@
 # Halil Ücel Code Library
 
+## 1.4.2 - 22.03.2023
+
+* TODO: Change Navigator Return Methods
+
 ## 1.4.1 - 19.03.2023
 
 * TODO: Change Enum Named 
